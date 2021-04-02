@@ -18,6 +18,8 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
+    "server": "cd backend && npm start",
+    "netlify": "concurrently \"npm run server\" \"npm run build\"",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
@@ -42,6 +44,7 @@
   "devDependencies": {
     "@tailwindcss/postcss7-compat": "^2.0.4",
     "autoprefixer": "^9.8.6",
+    "concurrently": "^6.0.0",
     "postcss": "^7.0.35",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.4"
   }
