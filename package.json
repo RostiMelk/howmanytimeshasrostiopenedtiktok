@@ -1,55 +1,36 @@
 {
   "name": "howmanytimeshasrostiopenedtiktok",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@craco/craco": "^6.1.1",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "axios": "^0.21.1",
-    "concurrently": "^6.0.0",
-    "nearest-date": "^1.0.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "timelapsed": "^1.0.7",
-    "web-vitals": "^1.0.1"
+  "version": "1.0.0",
+  "description": "How many times has Rosti opened Tiktok?",
+  "main": "index.js",
+  "engine": {
+    "node": "12.8.1",
+    "npm": "6.12.1"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "server:dev": "cd backend && nodemon start",
-    "server:prod": "cd backend && npm install && node server.js",
-    "dev": "concurrently \"npm run server:dev\" \"npm run start\"",
-    "heroku-postbuild-old": "concurrently \"npm run server:prod\" \"npm run build\"",
-    "heroku-postbuild": "npm run server:prod",
-    "test": "craco test",
-    "eject": "react-scripts eject"
+    "start": "node server/index.js",
+    "backend": "nodemon server/index.js",
+    "frontend": "npm run front --prefix client",
+    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RostiMelk/howmanytimeshasrostiopenedtiktok.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RostiMelk/howmanytimeshasrostiopenedtiktok/issues"
+  },
+  "homepage": "https://github.com/RostiMelk/howmanytimeshasrostiopenedtiktok#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss7-compat": "^2.0.4",
-    "autoprefixer": "^9.8.6",
-    "postcss": "^7.0.35",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.4"
-  },
-  "proxy": "http://localhost:5000"
+    "concurrently": "^6.0.0"
+  }
 }
