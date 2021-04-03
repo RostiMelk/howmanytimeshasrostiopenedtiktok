@@ -20,10 +20,10 @@
     "start": "craco start",
     "build": "craco build",
     "server:dev": "cd backend && nodemon start",
-    "server:prod": "cd backend && npm install",
+    "server:prod": "cd backend && npm install && node server.js",
     "dev": "concurrently \"npm run server:dev\" \"npm run start\"",
     "heroku-postbuild-old": "concurrently \"npm run server:prod\" \"npm run build\"",
-    "heroku-postbuild": "node backend/server.js",
+    "heroku-postbuild": "npm run server:prod",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
