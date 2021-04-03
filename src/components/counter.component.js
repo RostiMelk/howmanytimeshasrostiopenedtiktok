@@ -20,9 +20,9 @@ export default class Counter extends Component {
             .then(response => {
                 let dates = response.data.map(function(o,i) {
                     return o.date;
-                });            
-                
-                let index = nearest(dates, this.props.date) + 1;
+                }).map(date => new Date(date)); 
+                let propDate = new Date(this.props.date);
+                let index = nearest(dates, propDate);
 
                 this.setState({
                     total: response.data[index].total,

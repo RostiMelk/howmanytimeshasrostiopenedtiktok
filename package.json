@@ -19,8 +19,11 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "server": "cd backend && npm start",
-    "heroku-postbuild": "concurrently \"npm run server\" \"npm run build\"",
+    "server:dev": "cd backend && nodemon start",
+    "server:prod": "cd backend && npm start",
+    "dev": "concurrently \"npm run server:dev\" \"npm run start\"",
+    "heroku-postbuild-old": "concurrently \"npm run server:prod\" \"npm run build\"",
+    "heroku-postbuild": "npm run server:prod",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
