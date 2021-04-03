@@ -3,16 +3,16 @@ import axios from 'axios';
 
 export default class TotalCounter extends Counter {
     componentDidMount() {
-        axios.get(`${process.env.REACT_APP_BACKEND}/count/`)
+        axios.get('/count/')
             .then(response => {
                 let allTotals = response.data.map(function(o,i) {
                     return o.total;
                 });
 
-                let total = allTotals.reduce((a, b) => a + b, 0);
+                let totalOfArrays = allTotals.reduce((a, b) => a + b, 0);
 
                 this.setState({
-                    total: total,
+                    total: totalOfArrays,
                 })
             })
             .catch((error) => console.log(error))
