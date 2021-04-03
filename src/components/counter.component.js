@@ -16,7 +16,7 @@ export default class Counter extends Component {
     }
 
     componentDidMount() {
-        axios.get(`${process.env.REACT_APP_BACKEND}/count/`)
+        axios.get('/count/')
             .then(response => {
                 let dates = response.data.map(function(o,i) {
                     return o.date;
