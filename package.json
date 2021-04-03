@@ -20,7 +20,7 @@
     "start": "craco start",
     "build": "craco build",
     "server:dev": "cd backend && nodemon start",
-    "server:prod": "cd backend && npm start",
+    "server:prod": "cd backend && npm install && npm start",
     "dev": "concurrently \"npm run server:dev\" \"npm run start\"",
     "heroku-postbuild-old": "concurrently \"npm run server:prod\" \"npm run build\"",
     "heroku-postbuild": "npm run server:prod",
